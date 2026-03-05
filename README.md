@@ -6,7 +6,7 @@ A robust backend system that tracks user activities (login, logout, page view, e
 
 ```
 ┌─────────────┐     ┌───────────┐     ┌───────────────────┐     ┌──────────┐     ┌─────────┐
-│  HTTP Client│────▶│  Producer │────▶│     RabbitMQ      │────▶│ Consumer │────▶│  MySQL  │
+│  HTTP Client│───▶│  Producer │────▶│     RabbitMQ      │───▶│ Consumer │────▶│  MySQL  │
 │  (POST)     │ 202 │  Service  │     │  (message queue)  │     │ Service  │     │  (DB)   │
 └─────────────┘     └───────────┘     └───────────────────┘     └──────────┘     └─────────┘
 ```
@@ -27,7 +27,7 @@ A robust backend system that tracks user activities (login, logout, page view, e
 | Consumer Service | Java 17, Spring Boot 3.2       |
 | Message Broker   | RabbitMQ 3 (management alpine) |
 | Database         | MySQL 8.0                      |
-| Containerization | Docker, Docker Compose          |
+| Containerization | Docker, Docker Compose         |
 
 ## Project Structure
 
@@ -83,7 +83,7 @@ A robust backend system that tracks user activities (login, logout, page view, e
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Shamshuu/Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ
    cd Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ
    ```
 
@@ -139,12 +139,12 @@ Accepts a user activity event and publishes it to RabbitMQ.
 }
 ```
 
-| Field        | Type    | Required | Description                                    |
-|--------------|---------|----------|------------------------------------------------|
-| `user_id`    | integer | Yes      | Unique identifier for the user                 |
-| `event_type` | string  | Yes      | Type of activity (max 50 chars)                |
+| Field        | Type    | Required | Description                                      |
+|--------------|---------|----------|--------------------------------------------------|
+| `user_id`    | integer | Yes      | Unique identifier for the user                   |
+| `event_type` | string  | Yes      | Type of activity (max 50 chars)                  |
 | `timestamp`  | string  | Yes      | ISO 8601 datetime (e.g., `2023-10-27T10:00:00Z`) |
-| `metadata`   | object  | No       | Arbitrary key-value metadata                   |
+| `metadata`   | object  | No       | Arbitrary key-value metadata                     |
 
 **Success Response (202 Accepted):**
 ```json
