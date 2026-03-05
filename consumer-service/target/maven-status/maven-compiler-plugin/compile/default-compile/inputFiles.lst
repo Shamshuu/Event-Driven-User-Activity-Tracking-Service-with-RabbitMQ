@@ -1,0 +1,8 @@
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\consumer-service\src\main\java\com\example\consumer\repository\UserActivityRepository.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\consumer-service\src\main\java\com\example\consumer\listener\ActivityEventListener.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\consumer-service\src\main\java\com\example\consumer\model\UserActivity.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\consumer-service\src\main\java\com\example\consumer\model\UserActivityEvent.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\consumer-service\src\main\java\com\example\consumer\service\ActivityStorageService.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\consumer-service\src\main\java\com\example\consumer\controller\HealthController.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\consumer-service\src\main\java\com\example\consumer\config\RabbitMQConfig.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\consumer-service\src\main\java\com\example\consumer\ConsumerApplication.java

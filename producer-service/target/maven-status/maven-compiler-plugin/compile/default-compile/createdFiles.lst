@@ -1,0 +1,8 @@
+com\example\producer\config\RabbitMQConfig.class
+com\example\producer\service\EventPublisherService.class
+com\example\producer\model\ErrorResponse.class
+com\example\producer\ProducerApplication.class
+com\example\producer\controller\HealthController.class
+com\example\producer\exception\GlobalExceptionHandler.class
+com\example\producer\model\UserActivityEvent.class
+com\example\producer\controller\EventController.class

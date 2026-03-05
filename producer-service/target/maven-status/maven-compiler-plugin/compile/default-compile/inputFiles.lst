@@ -1,0 +1,8 @@
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\producer-service\src\main\java\com\example\producer\controller\EventController.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\producer-service\src\main\java\com\example\producer\model\UserActivityEvent.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\producer-service\src\main\java\com\example\producer\service\EventPublisherService.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\producer-service\src\main\java\com\example\producer\ProducerApplication.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\producer-service\src\main\java\com\example\producer\exception\GlobalExceptionHandler.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\producer-service\src\main\java\com\example\producer\model\ErrorResponse.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\producer-service\src\main\java\com\example\producer\config\RabbitMQConfig.java
+C:\GPP\Week13\Event-Driven-User-Activity-Tracking-Service-with-RabbitMQ\producer-service\src\main\java\com\example\producer\controller\HealthController.java

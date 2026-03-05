@@ -1,0 +1,8 @@
+com\example\consumer\model\UserActivityEvent.class
+com\example\consumer\service\ActivityStorageService.class
+com\example\consumer\ConsumerApplication.class
+com\example\consumer\repository\UserActivityRepository.class
+com\example\consumer\config\RabbitMQConfig.class
+com\example\consumer\model\UserActivity.class
+com\example\consumer\controller\HealthController.class
+com\example\consumer\listener\ActivityEventListener.class
