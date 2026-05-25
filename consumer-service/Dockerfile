@@ -6,7 +6,6 @@ RUN mvn dependency:resolve -B --fail-never
 
 COPY src ./src
 
-# Build the application
 RUN mvn clean package -DskipTests -B
 
 # Install curl for health check
