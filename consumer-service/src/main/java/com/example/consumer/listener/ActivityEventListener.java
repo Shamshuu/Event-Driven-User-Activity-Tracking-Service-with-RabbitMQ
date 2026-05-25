@@ -32,7 +32,6 @@ public class ActivityEventListener {
             log.error("Invalid event received, rejecting: {}", e.getMessage());
             throw new RuntimeException("Invalid event: " + e.getMessage(), e);
         } catch (Exception e) {
-
             log.error("Failed to process event for user_id={}: {}",
                     event != null ? event.getUserId() : "null", e.getMessage(), e);
             throw new RuntimeException("Processing failed: " + e.getMessage(), e);
