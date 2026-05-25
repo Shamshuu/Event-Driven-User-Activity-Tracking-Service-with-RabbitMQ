@@ -1,0 +1,68 @@
+docker-compose up -d --build
+
+
+# Check Producer Service Health (Should see UP and rabbitmq connected)
+
+curl -s http://localhost:8000/health
+
+
+# Check Consumer Service Health (Should see UP, rabbitmq connected, and mysql connected)
+
+curl -s http://localhost:8001/health
+
+
+Test the Valid Workflow
+
+curl -i -X POST http://localhost:8000/api/v1/events/track \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_id": 1,
+    "event_type": "login",
+    "timestamp": "2023-10-27T10:00:00Z",
+    "metadata": {"ip_address": "192.168.1.1", "device": "desktop"}
+  }'
+
+Track a Page View Event
+
+curl -i -X POST http://localhost:8000/api/v1/events/track \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_id": 1,
+    "event_type": "page_view",
+    "timestamp": "2023-10-27T10:01:00Z",
+    "metadata": {"page_url": "/dashboard", "session_id": "sess-001"}
+  }'
+
+Track a Logout Event (Without Metadata)
+
+curl -i -X POST http://localhost:8000/api/v1/events/track \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_id": 1,
+    "event_type": "logout",
+    "timestamp": "2023-10-27T10:30:00Z"
+  }'
+
+Test the Validation Handling
+
+# Missing the required "event_type" field
+
+curl -i -X POST http://localhost:8000/api/v1/events/track \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_id": 2,
+    "timestamp": "2023-10-27T11:00:00Z"
+  }'
+
+
+Verify Consumer Processing (Database Check)
+
+# Query the MySQL database to see the stored user activities
+
+docker-compose exec mysql mysql -u root -proot_password user_activity_db \
+  "SELECT * FROM user_activities \G"
+
+
+http://localhost:15672
+
+docker-compose down -v
