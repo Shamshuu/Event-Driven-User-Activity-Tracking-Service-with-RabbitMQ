@@ -4,7 +4,6 @@ WORKDIR /app
 COPY pom.xml .
 RUN mvn dependency:resolve -B --fail-never
 
-# Copy source code
 COPY src ./src
 
 # Build the application
