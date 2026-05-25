@@ -29,7 +29,6 @@ public class ActivityEventListener {
             storageService.store(event);
             log.info("Successfully processed event for user_id={}", event.getUserId());
         } catch (IllegalArgumentException e) {
-            // Malformed or invalid message — log and reject (goes to DLQ via config)
             log.error("Invalid event received, rejecting: {}", e.getMessage());
             throw new RuntimeException("Invalid event: " + e.getMessage(), e);
         } catch (Exception e) {
