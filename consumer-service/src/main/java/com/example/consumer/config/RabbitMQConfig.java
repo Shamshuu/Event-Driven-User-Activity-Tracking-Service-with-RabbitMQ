@@ -69,7 +69,7 @@ public class RabbitMQConfig {
         SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
         factory.setConnectionFactory(connectionFactory);
         factory.setMessageConverter(jsonMessageConverter);
-        factory.setDefaultRequeueRejected(false); // Send rejected messages to DLQ
+        factory.setDefaultRequeueRejected(false);
         factory.setPrefetchCount(10);
         return factory;
     }
